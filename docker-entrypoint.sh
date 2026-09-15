@@ -17,5 +17,6 @@ else
     echo "[entrypoint] MCP_BRASIL_DATASETS not set; skipping dataset warmup."
 fi
 
-echo "[entrypoint] Starting MCP server on :8061"
-exec uv run python -c "from mcp_brasil.server import mcp; mcp.run(transport='streamable-http', host='0.0.0.0', port=8061)"
+PORT="${PORT:-8061}"
+echo "[entrypoint] Starting MCP server on :${PORT}"
+exec uv run python -c "import os; from mcp_brasil.server import mcp; mcp.run(transport='streamable-http', host='0.0.0.0', port=int(os.environ.get('PORT', '8061')))"
