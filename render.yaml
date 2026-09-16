@@ -1,0 +1,11 @@
+services:
+  - name: mcp-brasil
+    type: web
+    runtime: docker
+    plan: free
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: MCP_BRASIL_AUTH_MODE
+        value: static
+      - key: MCP_BRASIL_API_TOKEN
+        generateValue: true
