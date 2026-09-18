@@ -9,3 +9,8 @@ services:
         value: static
       - key: MCP_BRASIL_API_TOKEN
         generateValue: true
+      # Chave publica do DataJud, publicada abertamente pelo CNJ em
+      # https://datajud-wiki.cnj.jus.br/api-publica/acesso
+      # Nao e segredo: e compartilhada por todos os usuarios da API publica.
+      - key: DATAJUD_API_KEY
+        value: cDZHYzlZa0JadVREZDJCendQbXY6SkJlTzNjLV9TRENyQk1RdnFKZGRQdw==
